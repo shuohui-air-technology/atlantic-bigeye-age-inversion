@@ -1,0 +1,21 @@
+{
+  "converged": true,
+  "iterations": 601,
+  "objective": 0.06632946143105135,
+  "projected_gradient_inf": 6.798030989607102e-07,
+  "coefficients": [
+    0.9957083592771948,
+    0.9174104913603963,
+    0.4071196559494707
+  ],
+  "monthly_group_proportion_mean": [
+    0.7364629964010527,
+    0.12642077461798068,
+    0.13711622898096668
+  ],
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "synthetic_only": true
+}

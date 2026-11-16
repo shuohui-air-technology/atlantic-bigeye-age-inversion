@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlantic-bigeye-age-inversion"
+version = "0.1.0"
+description = "Coarse age inversion for Atlantic bigeye tuna from commercial weight bins"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.scripts]
+bet-age-inversion = "bet_age_inversion.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["bet_age_inversion"]
+
+[tool.setuptools.package-data]
+bet_age_inversion = ["model_configuration.json"]

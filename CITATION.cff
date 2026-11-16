@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the version you used and cite the companion manuscript separately."
+type: software
+title: "Atlantic bigeye tuna age inversion"
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/shuohui-air-technology/atlantic-bigeye-age-inversion"
+authors:
+  - given-names: Peng
+    family-names: Lian
+  - given-names: Haoran
+    family-names: Yu
+abstract: >-
+  Python software for estimating coarse age-group catch indicators for Atlantic
+  bigeye tuna from four commercial weight bins. It fits monthly age states
+  from weight-based catch per unit effort and allocates operation catches to
+  age groups in fish equivalents.
+keywords:
+  - Atlantic bigeye tuna
+  - age inversion
+  - catch per unit effort
+  - fisheries
+references:
+  - type: unpublished
+    title: "Inferring Coarse Age Structure from Commercial Weight Bins: An Exploratory Approach for Atlantic Bigeye Tuna"
+    authors:
+      - given-names: Peng
+        family-names: Lian
+      - given-names: Haoran
+        family-names: Yu
+      - given-names: Jingcheng
+        family-names: Li
+      - given-names: Junzhou
+        family-names: Shang
+      - given-names: Lei
+        family-names: Xu
+      - given-names: Xiaomei
+        family-names: Wang
+      - given-names: Wenbo
+        family-names: Yang
