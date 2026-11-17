@@ -40,6 +40,8 @@ Use two CSV files. The first gives monthly CPUE by weight bin (**kg round weight
 
 The [input and output guide](docs/input-output.md) lists the required columns, date formats, output fields, and Python API. The software reads and writes files locally.
 
+The estimated age composition can change substantially with the assumed selectivity curve. For a specific fleet, use a length-selectivity curve that reflects the fleet's gear and fishing practices, as far as the available evidence allows. See [choosing a selectivity curve](docs/input-output.md#choosing-a-selectivity-curve) for the available settings.
+
 ## From bin weights to age-group CPUE
 
 The monthly fit links the age state to catch weight through the weight-bin observation kernel. For operation $i$, let $c_i(a_j)$ be the fish equivalents at age $a_j$. Sum those equivalents within group $g$, then divide by the hook count $H_i$ and multiply by 1,000 to obtain fish equivalents per 1,000 hooks (paper Eq. 10).

@@ -8,9 +8,15 @@ Prepare a monthly weight CPUE CSV and an operation catch and effort CSV using th
 .venv/bin/bet-age-inversion --monthly-csv /path/to/monthly.csv --operations-csv /path/to/operations.csv --output-dir /path/to/results
 ```
 
-Supply at least two observed months, with the first and last separated by at least two monthly transitions so that both entry endpoints can be defined. Each bin needs at least one positive monthly value. Operations must belong to the supplied observation months. If a month was observed with zero catch, keep that row and explicitly use four zeros. The alternative selectivity flags also work with the two CSV inputs.
+Supply at least two observed months, with the first and last separated by at least two monthly transitions so that both entry endpoints can be defined. Each bin needs at least one positive monthly value. Operations must belong to the supplied observation months. If a month was observed with zero catch, keep that row and explicitly use four zeros.
 
 On Windows, replace `.venv/bin/bet-age-inversion` with `.\.venv\Scripts\bet-age-inversion.exe`.
+
+## Choosing a selectivity curve
+
+Length selectivity describes how vulnerable fish of different lengths are to capture by a fleet. It affects both the monthly fit and the allocation of each operation's catch to age groups. The study's comparison of selectivity scenarios (Table 2) shows that the estimated age-group shares can differ substantially. When estimating age composition for your own fleet, use a curve that reflects its gear and fishing practices as closely as the available evidence allows.
+
+The command-line option `--selectivity` accepts `flat` (the default reference), `tropical`, and `southern`. The latter two are published curves for specific ICCAT longline fleets. Their sources and fleet definitions are listed in [Published parameters and external data](../SOURCES.md#parameters-used-by-the-age-model). Applying a different fleet-specific curve requires adapting the [selectivity implementation](../src/bet_age_inversion/selectivity.py).
 
 ## Inputs and outputs
 

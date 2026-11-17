@@ -8,9 +8,15 @@
 .venv/bin/bet-age-inversion --monthly-csv /path/to/monthly.csv --operations-csv /path/to/operations.csv --output-dir /path/to/results
 ```
 
-至少提供两个观测月，首末月之间至少跨两次月度转移，才能定义进入过程的两个端点。每个重量档的月度数值至少有一个正值。作业年月必须出现在提供的观测月中。如果某月有观测且确实是零渔获，保留该月并将四档明确填写为零。也可以加上 `--selectivity tropical` 或 `--selectivity southern`。
+至少提供两个观测月，首末月之间至少跨两次月度转移，才能定义进入过程的两个端点。每个重量档的月度数值至少有一个正值。作业年月必须出现在提供的观测月中。如果某月有观测且确实是零渔获，保留该月并将四档明确填写为零。
 
 Windows 下将 `.venv/bin/bet-age-inversion` 换成 `.\.venv\Scripts\bet-age-inversion.exe`。
+
+## 如何选择曲线
+
+体长选择性描述同一船队作业时，不同体长的鱼被捕获的相对难易程度。它会影响月度年龄状态拟合，也会影响逐次作业的年龄组分配。论文表 2 对比了不同选择性情景，估算出的年龄组比例可能有较大差异。用自有船队数据估算年龄组成时，优先采用有资料支持、尽可能符合该船队渔具和作业方式的曲线。
+
+命令行参数 `--selectivity` 支持 `flat`（默认平坦参照）、`tropical` 和 `southern`。后两条曲线来自 ICCAT 评估中的特定延绳钓船队，出处和船队定义见[参数和数据来源](../SOURCES.md#parameters-used-by-the-age-model)。若使用其他船队专属曲线，需要调整[选择性曲线的实现](../src/bet_age_inversion/selectivity.py)。
 
 ## 输入与输出
 
